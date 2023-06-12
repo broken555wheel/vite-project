@@ -4,6 +4,8 @@
     <h1>name: {{ name }}</h1>
     <h1>session: {{ session }}</h1>
     <h1>date: {{ date }}</h1>
+    <button @click="increaseCountValue">add</button><br/>
+    <button @click="decreaseCountValue">reduce</button>
   </div>
 </template>
 
@@ -33,7 +35,11 @@ export default {
     decreaseCountValue(){
       //get count variable from data option
       //decrement it by one
-      this.count--;
+      if(this.count === 0){
+        this.count = 0;
+      }else{
+        this.count--;
+      }
     },
   },
 };
