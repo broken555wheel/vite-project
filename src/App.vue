@@ -1,11 +1,13 @@
 
 
 <template>
-  <HelloWorld msg="Hello World" />
+  <div>
+    <Home/>
+  </div>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from  './components/home/home.vue'
 </script>
 
 <style scoped>
