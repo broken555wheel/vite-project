@@ -4,6 +4,9 @@
 <div>
     <Navigation/>
 </div>
+<div>
+    <Centre/>
+</div>
 <!-- center section -->
 <!-- footer -->
 
@@ -13,9 +16,11 @@
 <script>
 //import components to component
 import Navigation from '../navigation/navigation.vue'
+import Centre from '../centreSection/centresection.vue'
 export default{
     components:{
-        Navigation
+        Navigation,
+        Centre
     }
 }
 </script>
