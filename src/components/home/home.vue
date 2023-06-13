@@ -2,10 +2,13 @@
 <template>
 <!-- top navigation -->
 <div>
-    <Navigation/>
+    <Navigation :msg ="'Weclome to my ticketing app'"/>
 </div>
 <div>
     <Centre/>
+</div>
+<div>
+    
 </div>
 <!-- center section -->
 <!-- footer -->
