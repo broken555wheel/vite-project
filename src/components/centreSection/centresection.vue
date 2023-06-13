@@ -1,6 +1,6 @@
 <!-- tempelate -->
 <template>
-<div id = "CenterSection">
+<div class = "CenterSection">
             <!-- Photo -->
         <div class = "photo">
             <img src="../../assets/marcel-strauss-fzqxoFJytiE-unsplash 1.png" alt=""/>
@@ -25,19 +25,18 @@
 <!-- style -->
 <style>
 /* Styling the CenterSection */
-#CenterSection{
+.CenterSection{
     display:flex;
     
 }
 
 /* Styling the image */
-.picha{
+.photo{
     width: 365px;
     height: 358px;
     width: 50%;
     margin: 30px;
-    
-    
+       
 }
 
 /*Styling the button, title and paragraph  */
