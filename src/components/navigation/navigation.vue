@@ -3,8 +3,8 @@
   <div>
     <!-- logo -->
     <div class="TopNavigationBar">
-      <div :class="logo">{{ text }}</div>
-      <!--vbing - creating a dynamic style-->
+      <div :class="logo">tujengane</div>
+      <!--vbind - creating a dynamic style-->
       <!-- routes -->
       <div class="routes">
         <div><a href="" class="route">home</a></div>
@@ -13,61 +13,73 @@
       </div>
     </div>
   </div>
-  <div>{{ msg }}</div>
-  <div v-if="imageOfCar">
-    <img class="picha" :src="imageOfCar" />
-  </div>
-  <div v-else>No image found</div>
-  <div>{{ age }}</div>
+  <div v-for="movie in movies" :key = "movie.id">
+    <!-- name -->
+  <div>{{ movie.name }}</div>
+  <!-- type -->
+  <div>{{ movie.type }}</div>
+  <!-- year of production -->
+  
+  <div>{{ checkIfCurrnentYear(movie.yearOfProduction) }}</div>
+  <!-- rating -->
+  <div>{{ movie.rating}}</div>
+  <!-- <div v-for="item in movie.rating" :key="item">
+<svg class = "star" width="10px" height="10px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.65 8.93274L12.4852 4.30901C12.2923 3.89699 11.7077 3.897 11.5148 4.30902L9.35002 8.93274L4.45559 9.68243C4.02435 9.74848 3.84827 10.2758 4.15292 10.5888L7.71225 14.2461L6.87774 19.3749C6.80571 19.8176 7.27445 20.1487 7.66601 19.9317L12 17.5299L16.334 19.9317C16.7256 20.1487 17.1943 19.8176 17.1223 19.3749L16.2878 14.2461L19.8471 10.5888C20.1517 10.2758 19.9756 9.74848 19.5444 9.68243L14.65 8.93274Z" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div> -->
+    </div>
 
-  <button @click="increaseAge">add age</button>
-  <button @click="decreaseAge">reduce age</button>
 </template>
 <!-- script -->
 <script>
 export default {
   //props is tacked ith passing data from parent component to child component
+  //computed option
+  // computed:{
+  //   for(let i = 0; i<this.movie.length;i++){
+  //     console.log("==> ", this.movies[i])
+  //     if(this.movies[i].yearOfProduction === 2023){
+  //       return 'current'
+  //     }
+  //     else{
+  //       return this.movies[i].yearOfProduction;
+  //     }
+  //   }
+  //   }
+    
+      
+  },
   props: ["msg"],
   data() {
     return {
       text: "tujengane",
       logo: "logo",
-      age: 0,
-      imageOfCar: "",
+      movies:[
+        {
+          id:'GOT2005',
+          name:'Game of Thrones',
+          rating:8,
+          yearOfProduction:2005,
+          type:'Fantasy'
+        },
+        {
+          id:'FS2023',
+          name:'Fast Saga',
+          rating:9,
+          yearOfProduction:2023,
+          type:'Action'
+        },
+        {
+          id:'VS2013',
+          name:'Vinland Saga',
+          rating:9,
+          yearOfProduction:2013,
+          type:'Anime'
+        }
+      ]
     };
   },
-  methods: {
-    // alterColor(){
-    //   console.log("alterColor");
-    //   this.logo = 'test';
-    //   this.text="Hello David"
-    // this.imageOfLand='./src/assets/vue.svg'
-
-    toggleImage() {
-      if (this.age >= 10 && this.age <= 20) {
-        this.imageOfCar =
-          "https://images.pexels.com/photos/249344/pexels-photo-249344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-      } else if (this.age >= 21) {
-        this.imageOfCar =
-          "https://images.pexels.com/photos/12393012/pexels-photo-12393012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-      } else {
-        this.imageOfCar = "";
-      }
-    },
-    //increment age
-    increaseAge() {
-      //increment by 1
-      this.age++;
-      //check if age has reached 10
-      //if so change image
-      this.toggleImage();
-    },
-    decreaseAge() {
-      this.age--;
-      this.toggleImage();
-    },
-  },
-};
+  methods: {}
+}
 </script>
 <!-- style -->
 <style>
@@ -83,7 +95,7 @@ export default {
   margin-top: 48px;
   font-size: 36px;
   color: #f63505;
-  font-family: courier new, monospace;
+  font-family: monospace;
   text-decoration: none;
 }
 
@@ -116,5 +128,8 @@ export default {
 }
 .picha {
   width: 100px;
+}
+.star{
+  
 }
 </style>
