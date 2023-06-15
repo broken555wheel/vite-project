@@ -20,7 +20,7 @@
   <div>{{ movie.type }}</div>
   <!-- year of production -->
   
-  <div>{{ checkIfCurrnentYear(movie.yearOfProduction) }}</div>
+  <!-- <div>{{ checkIfCurrnentYear(movie.yearOfProduction) }}</div> -->
   <!-- rating -->
   <div>{{ movie.rating}}</div>
   <!-- <div v-for="item in movie.rating" :key="item">
@@ -33,7 +33,7 @@
 <script>
 export default {
   //props is tacked ith passing data from parent component to child component
-  //computed option
+ // computed option
   // computed:{
   //   for(let i = 0; i<this.movie.length;i++){
   //     console.log("==> ", this.movies[i])
@@ -44,10 +44,7 @@ export default {
   //       return this.movies[i].yearOfProduction;
   //     }
   //   }
-  //   }
-    
-      
-  },
+  //   },
   props: ["msg"],
   data() {
     return {
@@ -129,7 +126,5 @@ export default {
 .picha {
   width: 100px;
 }
-.star{
-  
-}
+
 </style>

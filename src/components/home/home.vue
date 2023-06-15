@@ -2,7 +2,7 @@
 <template>
 <!-- top navigation -->
 <div>
-    <Navigation :msg ="'Weclome to my ticketing app'"/>
+    <navigation :msg ="'Weclome to my ticketing app'"/>
 </div>
 <div>
     <Centre/>
@@ -18,11 +18,11 @@
 <!-- script -->
 <script>
 //import components to component
-import Navigation from '../navigation/navigation.vue'
+import navigation from '../navigation/navigation.vue'
 import Centre from '../centreSection/centresection.vue'
 export default{
     components:{
-        Navigation,
+        navigation,
         Centre
     }
 }
